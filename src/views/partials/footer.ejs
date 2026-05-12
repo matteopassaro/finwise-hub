@@ -1,0 +1,66 @@
+<!-- Footer -->
+<footer class="footer mt-auto">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
+    <div class="grid grid-cols-1 md:grid-cols-4 gap-8 mb-8">
+      <!-- Brand -->
+      <div class="md:col-span-1">
+        <a href="/" class="flex items-center gap-2 mb-4">
+          <span class="text-2xl">💰</span>
+          <span class="font-display font-bold text-xl text-white">Finwise<span class="text-brand-400">.rocks</span></span>
+        </a>
+        <p class="text-sm text-gray-500 leading-relaxed">Il tuo hub autorevole per i migliori bonus bancari e programmi referral in Italia.</p>
+      </div>
+
+      <!-- Links -->
+      <div>
+        <h4 class="text-sm font-semibold text-white mb-4 uppercase tracking-wider">Bonus</h4>
+        <ul class="space-y-2">
+          <% promos.forEach(p => { %>
+          <li><a href="/bonus/<%= p.slug %>" class="text-sm text-gray-500 hover:text-brand-400 transition-colors"><%= p.name %></a></li>
+          <% }) %>
+          <li><a href="/bonus" class="text-sm text-brand-400 hover:text-brand-300 transition-colors">Vedi tutti →</a></li>
+        </ul>
+      </div>
+
+      <div>
+        <h4 class="text-sm font-semibold text-white mb-4 uppercase tracking-wider">Risorse</h4>
+        <ul class="space-y-2">
+          <li><a href="/blog" class="text-sm text-gray-500 hover:text-brand-400 transition-colors">Blog</a></li>
+          <li><a href="/about" class="text-sm text-gray-500 hover:text-brand-400 transition-colors">Chi Siamo</a></li>
+          <li><a href="/contatti" class="text-sm text-gray-500 hover:text-brand-400 transition-colors">Contatti</a></li>
+        </ul>
+      </div>
+
+      <div>
+        <h4 class="text-sm font-semibold text-white mb-4 uppercase tracking-wider">Legale</h4>
+        <ul class="space-y-2">
+          <li><a href="/disclaimer" class="text-sm text-gray-500 hover:text-brand-400 transition-colors">Disclaimer</a></li>
+          <li><a href="/privacy" class="text-sm text-gray-500 hover:text-brand-400 transition-colors">Privacy Policy</a></li>
+        </ul>
+      </div>
+    </div>
+
+    <!-- Disclaimer -->
+    <div class="border-t border-gray-800 pt-6 mb-6">
+      <div class="bg-gray-800/50 rounded-xl p-4 border border-gray-700/50">
+        <p class="text-xs text-gray-500 leading-relaxed">
+          <strong class="text-gray-400">⚠️ Disclaimer:</strong> Questo sito contiene link di referral/affiliazione. Quando ti iscrivi tramite i nostri link, potremmo ricevere un compenso senza costi aggiuntivi per te. Verifica sempre le condizioni ufficiali direttamente sulle app e i siti delle banche prima di aderire a qualsiasi promozione. Le informazioni riportate sono aggiornate al momento della pubblicazione ma possono variare. Finwise.rocks non è un intermediario finanziario e non fornisce consulenza finanziaria.
+        </p>
+      </div>
+    </div>
+
+    <!-- Copyright -->
+    <div class="flex flex-col sm:flex-row items-center justify-between gap-4 text-xs text-gray-600">
+      <p>© <%= currentYear %> Finwise.rocks — Tutti i diritti riservati.</p>
+      <p>Made with 💚 in Italia</p>
+    </div>
+  </div>
+</footer>
+
+<!-- Toast container -->
+<div id="toast" class="toast"></div>
+
+<!-- Scripts -->
+<script src="/js/main.js"></script>
+</body>
+</html>

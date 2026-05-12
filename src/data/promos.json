@@ -1,0 +1,379 @@
+[
+  {
+    "id": "buddy",
+    "slug": "buddy-unicredit",
+    "name": "Buddy UniCredit",
+    "shortName": "Buddy",
+    "bank": "UniCredit",
+    "tagline": "Genius Buddy – Porta un amico",
+    "description": "Apri un conto Genius Buddy con il codice invito e ricevi 50€ direttamente sul conto. Anche il tuo amico riceve 50€!",
+    "longDescription": "L'iniziativa Buddy UniCredit (Genius Buddy) ti permette di ricevere un bonus di 50€ netti direttamente sul conto corrente, semplicemente aprendo un nuovo rapporto con il codice di invito. Il bonus è riconosciuto sia a te (buddy Amico) che a chi ti invita (buddy Invitante). L'importo netto di 50€ è il risultato del provento straordinario lordo al netto della ritenuta fiscale del 26%. Per ottenere il bonus è sufficiente effettuare una transazione di almeno 10€ con la carta di debito MyOne entro 30 giorni dall'apertura.",
+    "bonusAmount": 50,
+    "bonusCurrency": "€",
+    "bonusType": "Accredito su conto",
+    "referralCode": "B2601MO37OB2W8",
+    "referralLink": "https://buddy.unicredit.it/?ref=finwise2026",
+    "difficulty": "Facile",
+    "difficultyScore": 1,
+    "timeToBonus": "Entro 90 giorni lavorativi",
+    "validFrom": "2026-01-20",
+    "validTo": "2026-07-20",
+    "maxReferrals": 100,
+    "maxEarnings": 5000,
+    "requirements": [
+      "Aprire un conto Genius Buddy con il codice invito",
+      "Effettuare almeno una transazione di 10€ con carta MyOne",
+      "Completare entro 30 giorni dall'apertura"
+    ],
+    "steps": [
+      {
+        "step": 1,
+        "title": "Scarica l'app Buddy UniCredit",
+        "description": "Scarica l'app buddy UniCredit da App Store o Google Play. L'app è gratuita e disponibile per iOS e Android."
+      },
+      {
+        "step": 2,
+        "title": "Inizia la registrazione",
+        "description": "Apri l'app e avvia il processo di apertura del conto Genius Buddy. Ti serviranno documento d'identità e codice fiscale."
+      },
+      {
+        "step": 3,
+        "title": "Inserisci il codice invito",
+        "description": "Durante la registrazione, quando richiesto, inserisci il codice invito B2601MO37OB2W8. Assicurati di inserirlo correttamente."
+      },
+      {
+        "step": 4,
+        "title": "Completa l'apertura del conto",
+        "description": "Segui la procedura guidata per completare la verifica dell'identità e l'apertura del conto corrente."
+      },
+      {
+        "step": 5,
+        "title": "Effettua una transazione di almeno 10€",
+        "description": "Usa la carta di debito MyOne associata al conto per effettuare un pagamento di almeno 10€ (anche un acquisto online, in negozio, o una ricarica telefonica)."
+      },
+      {
+        "step": 6,
+        "title": "Ricevi 50€ sul conto",
+        "description": "Entro 90 giorni lavorativi dalla transazione, riceverai l'accredito di 50€ netti direttamente sul tuo conto corrente."
+      }
+    ],
+    "faqs": [
+      {
+        "question": "Il bonus Buddy UniCredit è netto o lordo?",
+        "answer": "Il bonus di 50€ è netto. L'importo è il risultato del provento lordo al netto della ritenuta fiscale del 26% (ai sensi art. 26 del DPR 600/73)."
+      },
+      {
+        "question": "Quali transazioni sono valide per ottenere il bonus?",
+        "answer": "Sono valide le transazioni effettuate con la carta di debito internazionale MyOne associata al conto per un importo minimo di 10€. Sono inclusi pagamenti POS, online, bonifici e ricariche. Non sono valide le ricariche verso carte prepagate."
+      },
+      {
+        "question": "Entro quanto tempo riceverò il bonus?",
+        "answer": "L'accredito avviene entro 90 giorni lavorativi dalla data della transazione di almeno 10€."
+      },
+      {
+        "question": "Posso invitare anche io degli amici dopo aver aperto il conto?",
+        "answer": "Sì! Dopo l'apertura del conto riceverai il tuo codice invito personale nella sezione 'iniziative e promo' dell'app. Potrai invitare fino a 100 amici e guadagnare fino a 5.000€."
+      },
+      {
+        "question": "L'iniziativa è cumulabile con altre promozioni UniCredit?",
+        "answer": "Sì, l'iniziativa Buddy è cumulabile con altre iniziative in corso presso UniCredit."
+      }
+    ],
+    "pros": [
+      "Bonus alto: 50€ netti",
+      "Requisito minimo: solo 10€ di transazione",
+      "Conto gratuito per under 30",
+      "Possibilità di guadagnare fino a 5.000€ invitando amici"
+    ],
+    "cons": [
+      "Tempi di accredito lunghi (fino a 90 giorni)",
+      "Necessario documento d'identità italiano",
+      "Conto non gratuito per over 30 (canone mensile)"
+    ],
+    "color": "#E30613",
+    "icon": "bank",
+    "featured": true,
+    "order": 1
+  },
+  {
+    "id": "isybank",
+    "slug": "isybank",
+    "name": "isybank",
+    "shortName": "isybank",
+    "bank": "Intesa Sanpaolo (isybank)",
+    "tagline": "Porta un Amico 2.0",
+    "description": "Apri un Piano isybank con il codice amico e ricevi un Buono Regalo Amazon.it da 30€. Semplice, veloce e digitale.",
+    "longDescription": "L'operazione a premi 'Porta un Amico 2.0' di isybank ti permette di ottenere un Buono Regalo Amazon.it del valore di 30€. Basta scaricare l'app isybank, attivare un Piano (isyLight, isySmart o isyPrime – il conto Base non dà diritto al premio), accedere alla sezione isyReward e inserire il codice amico entro 15 giorni dall'apertura del Piano. Il buono verrà consegnato entro il 30/09/2026. Nota: il Piano deve risultare aperto al momento della consegna del premio.",
+    "bonusAmount": 30,
+    "bonusCurrency": "€",
+    "bonusType": "Buono Amazon",
+    "referralCode": "3VRLYYIQX8",
+    "referralLink": "https://www.isybank.com/?ref=finwise2026",
+    "difficulty": "Molto facile",
+    "difficultyScore": 1,
+    "timeToBonus": "Entro 30/09/2026",
+    "validFrom": "2025-11-08",
+    "validTo": "2026-05-15",
+    "maxReferrals": null,
+    "maxEarnings": null,
+    "requirements": [
+      "Scaricare l'app isybank e aprire un Piano (no conto Base)",
+      "Inserire il codice amico in isyReward entro 15 giorni",
+      "Mantenere il Piano aperto fino alla consegna del premio"
+    ],
+    "steps": [
+      {
+        "step": 1,
+        "title": "Scarica l'app isybank",
+        "description": "Scarica l'app isybank da App Store o Google Play. È la banca digitale del gruppo Intesa Sanpaolo."
+      },
+      {
+        "step": 2,
+        "title": "Scegli e attiva un Piano",
+        "description": "Scegli tra isyLight, isySmart o isyPrime. Attenzione: il conto Base NON dà diritto al premio. Completa la registrazione con i tuoi documenti."
+      },
+      {
+        "step": 3,
+        "title": "Vai in isyReward",
+        "description": "Nell'app, accedi alla sezione 'isyReward iniziative e vantaggi' dal menu 'Altro'."
+      },
+      {
+        "step": 4,
+        "title": "Aderisci a 'Porta un Amico 2.0'",
+        "description": "Trova l'iniziativa 'Porta un Amico 2.0' e aderisci all'operazione a premi."
+      },
+      {
+        "step": 5,
+        "title": "Inserisci il codice amico",
+        "description": "Inserisci il codice amico 3VRLYYIQX8 entro 15 giorni dall'apertura del Piano e comunque non oltre il 30/05/2026."
+      },
+      {
+        "step": 6,
+        "title": "Ricevi il Buono Amazon da 30€",
+        "description": "Il Buono Regalo Amazon.it da 30€ verrà consegnato entro il 30/09/2026. Il Piano deve essere ancora aperto al momento della consegna."
+      }
+    ],
+    "faqs": [
+      {
+        "question": "Quale Piano isybank devo attivare?",
+        "answer": "Puoi scegliere tra isyLight, isySmart o isyPrime. Il conto Base NON dà diritto al premio. isyLight è il piano gratuito più accessibile."
+      },
+      {
+        "question": "Entro quando devo inserire il codice amico?",
+        "answer": "Devi inserire il codice entro 15 giorni dall'apertura del Piano e comunque non oltre il 30/05/2026."
+      },
+      {
+        "question": "Quando riceverò il Buono Amazon?",
+        "answer": "Il Buono Regalo Amazon.it da 30€ verrà consegnato entro il 30/09/2026, a condizione che il Piano sia ancora aperto."
+      },
+      {
+        "question": "Il buono Amazon ha restrizioni?",
+        "answer": "Sì, si applicano le condizioni standard dei Buoni Regalo Amazon.it. Dettagli su amazon.it/gc-legal."
+      },
+      {
+        "question": "Posso partecipare se sono già cliente isybank?",
+        "answer": "No, l'operazione è riservata ai nuovi clienti che aprono un Piano per la prima volta durante il periodo promozionale."
+      }
+    ],
+    "pros": [
+      "Nessuna transazione richiesta",
+      "Piano isyLight gratuito",
+      "Buono Amazon spendibile subito",
+      "Procedura completamente digitale"
+    ],
+    "cons": [
+      "Bonus inferiore ad altri (30€ vs 50€)",
+      "Scadenza promozione vicina (15/05/2026)",
+      "Tempi di consegna premio lunghi"
+    ],
+    "color": "#6D28D9",
+    "icon": "credit-card",
+    "featured": true,
+    "order": 2
+  },
+  {
+    "id": "revolut",
+    "slug": "revolut",
+    "name": "Revolut",
+    "shortName": "Revolut",
+    "bank": "Revolut Bank UAB",
+    "tagline": "Invita un amico e guadagna",
+    "description": "Unisciti a oltre 50 milioni di utenti Revolut. Iscriviti con il link referral e completa i requisiti per ricevere il tuo premio in denaro.",
+    "longDescription": "Revolut offre ai propri clienti la possibilità di guadagnare un premio referral in denaro accreditato direttamente sul saldo del conto personale, invitando nuovi utenti a registrarsi. L'invitato deve completare i passaggi indicati nei termini della promozione durante il Periodo della Promozione. Il premio viene accreditato sul conto Revolut dopo la verifica dei requisiti. Revolut è una delle app finanziarie più usate in Europa con oltre 50 milioni di utenti.",
+    "bonusAmount": 50,
+    "bonusCurrency": "€",
+    "bonusType": "Accredito su conto",
+    "referralCode": null,
+    "referralLink": "https://revolut.com/referral/?referral-code=matteo963l!MAY1-26-AR&geo-redirect",
+    "difficulty": "Facile",
+    "difficultyScore": 1,
+    "timeToBonus": "Entro 30 giorni",
+    "validFrom": "2026-05-01",
+    "validTo": "2026-05-31",
+    "maxReferrals": null,
+    "maxEarnings": null,
+    "requirements": [
+      "Registrarsi con il link referral",
+      "Completare la verifica dell'identità",
+      "Effettuare 3 transazioni con carta (POS o online) di almeno 5€ ciascuna"
+    ],
+    "steps": [
+      {
+        "step": 1,
+        "title": "Clicca sul link di invito",
+        "description": "Usa il link di invito qui sotto per accedere alla pagina di registrazione Revolut con il bonus attivato."
+      },
+      {
+        "step": 2,
+        "title": "Scarica l'app Revolut",
+        "description": "Scarica l'app Revolut da App Store o Google Play e inizia la registrazione."
+      },
+      {
+        "step": 3,
+        "title": "Completa la verifica",
+        "description": "Verifica la tua identità con un documento valido e un selfie. La procedura richiede pochi minuti."
+      },
+      {
+        "step": 4,
+        "title": "Ordina la carta fisica o virtuale",
+        "description": "Ordina la tua carta Revolut (fisica o virtuale) per iniziare a effettuare pagamenti."
+      },
+      {
+        "step": 5,
+        "title": "Effettua 3 pagamenti di almeno 5€",
+        "description": "Usa la carta Revolut per effettuare almeno 3 transazioni con carta (POS fisico o online) di almeno 5€ ciascuna."
+      },
+      {
+        "step": 6,
+        "title": "Ricevi il premio",
+        "description": "Dopo la verifica dei requisiti, il premio verrà accreditato direttamente sul saldo del tuo conto Revolut."
+      }
+    ],
+    "faqs": [
+      {
+        "question": "Quanto vale il bonus Revolut?",
+        "answer": "Il premio varia in base alla promozione attiva. Attualmente il bonus è di circa 50€ per chi completa i requisiti. Controlla il link di invito per l'importo esatto."
+      },
+      {
+        "question": "Quali pagamenti sono validi?",
+        "answer": "Sono validi i pagamenti effettuati con la carta Revolut (fisica o virtuale) presso POS fisici o online, di almeno 5€ ciascuno. Non sono validi trasferimenti P2P o ricariche."
+      },
+      {
+        "question": "Revolut è sicura?",
+        "answer": "Sì, Revolut Bank UAB è una banca con licenza bancaria europea (Lituania) e i depositi sono protetti fino a 100.000€ dal fondo di garanzia dei depositi."
+      },
+      {
+        "question": "Posso usare Revolut come conto principale?",
+        "answer": "Sì, Revolut offre IBAN italiano/lituano, carta di debito, bonifici SEPA gratuiti e molte altre funzionalità. Molti utenti lo usano come conto principale o secondario."
+      }
+    ],
+    "pros": [
+      "App eccellente e moderna",
+      "Conto gratuito (piano Standard)",
+      "Cambio valuta vantaggioso",
+      "Carta virtuale istantanea"
+    ],
+    "cons": [
+      "Bonus variabile in base alla promozione",
+      "Necessarie 3 transazioni con carta",
+      "Promozione con scadenza breve"
+    ],
+    "color": "#0075EB",
+    "icon": "globe",
+    "featured": true,
+    "order": 3
+  },
+  {
+    "id": "trade-republic",
+    "slug": "trade-republic",
+    "name": "Trade Republic",
+    "shortName": "Trade Republic",
+    "bank": "Trade Republic Bank GmbH",
+    "tagline": "Investi e guadagna un bonus",
+    "description": "Apri un conto Trade Republic con il link di invito e ricevi un bonus in azioni o crypto dopo il primo deposito e investimento.",
+    "longDescription": "Trade Republic è una delle piattaforme di investimento più popolari in Europa, con oltre 8 milioni di clienti. Con il programma referral, puoi ricevere un bonus sotto forma di azioni frazionate o crypto quando apri un conto con un link di invito e completi il tuo primo investimento. La piattaforma offre anche un conto con IBAN e carta di debito, con interessi sul saldo non investito.",
+    "bonusAmount": 50,
+    "bonusCurrency": "€",
+    "bonusType": "Bonus in azioni/crypto",
+    "referralCode": null,
+    "referralLink": "https://ref.trade.re/finwise2026",
+    "difficulty": "Media",
+    "difficultyScore": 2,
+    "timeToBonus": "Entro 14 giorni",
+    "validFrom": "2026-01-01",
+    "validTo": "2026-12-31",
+    "maxReferrals": null,
+    "maxEarnings": null,
+    "requirements": [
+      "Registrarsi con il link di invito",
+      "Completare la verifica dell'identità",
+      "Effettuare un deposito di almeno 50€",
+      "Completare un investimento (acquisto azioni, ETF o crypto)"
+    ],
+    "steps": [
+      {
+        "step": 1,
+        "title": "Clicca sul link di invito",
+        "description": "Accedi alla pagina di registrazione Trade Republic tramite il link di invito per attivare il bonus."
+      },
+      {
+        "step": 2,
+        "title": "Scarica l'app Trade Republic",
+        "description": "Scarica l'app da App Store o Google Play e inizia la registrazione con email e numero di telefono."
+      },
+      {
+        "step": 3,
+        "title": "Completa la verifica",
+        "description": "Verifica la tua identità con documento e video-identificazione. La procedura è rapida e guidata."
+      },
+      {
+        "step": 4,
+        "title": "Deposita almeno 50€",
+        "description": "Effettua un bonifico di almeno 50€ sul tuo conto Trade Republic. I fondi saranno disponibili in 1-2 giorni."
+      },
+      {
+        "step": 5,
+        "title": "Effettua il primo investimento",
+        "description": "Acquista azioni, ETF o crypto per qualsiasi importo. Anche un singolo acquisto da 1€ è sufficiente."
+      },
+      {
+        "step": 6,
+        "title": "Ricevi il bonus",
+        "description": "Entro 14 giorni dall'investimento, riceverai il bonus sotto forma di azioni frazionate o crypto sul tuo conto."
+      }
+    ],
+    "faqs": [
+      {
+        "question": "Quanto vale il bonus Trade Republic?",
+        "answer": "Il bonus è generalmente compreso tra 10€ e 50€ in azioni frazionate, a seconda della promozione attiva. Il valore esatto viene comunicato dopo la registrazione."
+      },
+      {
+        "question": "Devo investire per forza?",
+        "answer": "Sì, per ottenere il bonus è necessario effettuare almeno un investimento (acquisto di azioni, ETF o crypto) dopo il deposito iniziale."
+      },
+      {
+        "question": "Trade Republic è sicura?",
+        "answer": "Sì, Trade Republic è una banca tedesca con licenza BaFin. I depositi sono protetti fino a 100.000€ e gli investimenti sono custoditi in conti separati."
+      },
+      {
+        "question": "Ci sono costi per il conto?",
+        "answer": "No, il conto Trade Republic è gratuito. Le commissioni per gli investimenti sono di 1€ per ordine. I piani di accumulo (PAC) sono gratuiti."
+      }
+    ],
+    "pros": [
+      "Interessi sul saldo non investito",
+      "Commissioni bassissime (1€/ordine)",
+      "PAC gratuiti su azioni e ETF",
+      "Carta di debito con cashback"
+    ],
+    "cons": [
+      "Richiede un investimento per il bonus",
+      "Bonus in forma di azioni (non cash)",
+      "Deposito minimo di 50€"
+    ],
+    "color": "#1A1A2E",
+    "icon": "chart",
+    "featured": true,
+    "order": 4
+  }
+]

@@ -1,0 +1,44 @@
+<!-- Navbar -->
+<nav class="navbar" id="navbar">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div class="flex items-center justify-between h-16">
+      <!-- Logo -->
+      <a href="/" class="flex items-center gap-2 group">
+        <span class="text-2xl">💰</span>
+        <span class="font-display font-bold text-xl text-gray-900 dark:text-white group-hover:text-brand-600 dark:group-hover:text-brand-400 transition-colors">Finwise<span class="text-brand-600 dark:text-brand-400">.rocks</span></span>
+      </a>
+
+      <!-- Desktop Nav -->
+      <div class="hidden md:flex items-center gap-1">
+        <a href="/" class="nav-link <%= currentPath === '/' ? 'active' : '' %>">Home</a>
+        <a href="/bonus" class="nav-link <%= currentPath === '/bonus' || currentPath.startsWith('/bonus/') ? 'active' : '' %>">Bonus</a>
+        <a href="/blog" class="nav-link <%= currentPath === '/blog' || currentPath.startsWith('/blog/') ? 'active' : '' %>">Blog</a>
+        <a href="/about" class="nav-link <%= currentPath === '/about' ? 'active' : '' %>">Chi Siamo</a>
+        <a href="/contatti" class="nav-link <%= currentPath === '/contatti' ? 'active' : '' %>">Contatti</a>
+      </div>
+
+      <!-- Right side -->
+      <div class="flex items-center gap-2">
+        <button id="dark-toggle" class="p-2 rounded-lg text-gray-600 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-800 transition-colors" aria-label="Toggle dark mode">
+          <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M20.354 15.354A9 9 0 018.646 3.646 9.003 9.003 0 0012 21a9.003 9.003 0 008.354-5.646z"/></svg>
+        </button>
+
+        <!-- Mobile menu button -->
+        <button id="mobile-menu-btn" class="md:hidden p-2 rounded-lg text-gray-600 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-800" aria-expanded="false" aria-label="Menu">
+          <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"/></svg>
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Mobile menu -->
+  <div id="mobile-menu" class="hidden md:hidden border-t border-gray-200 dark:border-gray-700 bg-white dark:bg-dark-800">
+    <div class="px-4 py-3 space-y-1">
+      <a href="/" class="block nav-link <%= currentPath === '/' ? 'active' : '' %>">Home</a>
+      <a href="/bonus" class="block nav-link <%= currentPath.startsWith('/bonus') ? 'active' : '' %>">Bonus</a>
+      <a href="/blog" class="block nav-link <%= currentPath.startsWith('/blog') ? 'active' : '' %>">Blog</a>
+      <a href="/about" class="block nav-link <%= currentPath === '/about' ? 'active' : '' %>">Chi Siamo</a>
+      <a href="/contatti" class="block nav-link <%= currentPath === '/contatti' ? 'active' : '' %>">Contatti</a>
+    </div>
+  </div>
+</nav>

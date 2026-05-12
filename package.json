@@ -1,0 +1,26 @@
+{
+  "name": "finwise-rocks",
+  "version": "1.0.0",
+  "description": "Finwise.rocks – I migliori bonus bancari e referral Italia 2026",
+  "main": "server.js",
+  "scripts": {
+    "dev": "concurrently \"npx tailwindcss -i ./src/public/css/input.css -o ./src/public/css/style.css --watch\" \"nodemon server.js\"",
+    "build:css": "npx tailwindcss -i ./src/public/css/input.css -o ./src/public/css/style.css --minify",
+    "start": "node server.js",
+    "build": "npm run build:css"
+  },
+  "dependencies": {
+    "compression": "^1.7.4",
+    "ejs": "^3.1.10",
+    "express": "^4.21.1",
+    "helmet": "^8.0.0"
+  },
+  "devDependencies": {
+    "concurrently": "^9.1.0",
+    "nodemon": "^3.1.7",
+    "tailwindcss": "^3.4.15"
+  },
+  "engines": {
+    "node": ">=18.0.0"
+  }
+}

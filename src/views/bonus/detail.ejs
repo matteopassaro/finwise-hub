@@ -1,0 +1,253 @@
+<%- include('../partials/head') %>
+<%- include('../partials/navbar') %>
+
+<style>
+  :root {
+    --promo-color: <%= promo.color %>;
+    --promo-color-10: <%= promo.color %>10;
+    --promo-color-05: <%= promo.color %>05;
+    --promo-color-30: <%= promo.color %>30;
+  }
+</style>
+
+<main class="flex-1">
+  <!-- Breadcrumb -->
+  <div class="bg-gray-50 dark:bg-dark-800 border-b border-gray-200 dark:border-gray-700">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-3">
+      <nav class="flex text-sm text-gray-500">
+        <a href="/" class="hover:text-brand-600">Home</a>
+        <span class="mx-2">/</span>
+        <a href="/bonus" class="hover:text-brand-600">Bonus</a>
+        <span class="mx-2">/</span>
+        <span class="text-gray-900 dark:text-white font-medium"><%= promo.name %></span>
+      </nav>
+    </div>
+  </div>
+
+  <!-- Header -->
+  <section class="py-12 md:py-16" style="background: linear-gradient(135deg, var(--promo-color-10), var(--promo-color-05))">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="flex flex-col md:flex-row md:items-center gap-6">
+        <div class="w-20 h-20 rounded-2xl flex items-center justify-center text-white font-bold text-3xl shadow-lg" style="background: var(--promo-color)">
+          <%= promo.shortName.charAt(0) %>
+        </div>
+        <div class="flex-1">
+          <div class="flex flex-wrap items-center gap-3 mb-2">
+            <h1 class="text-3xl md:text-4xl font-display font-bold text-gray-900 dark:text-white"><%= promo.name %></h1>
+            <span class="badge-green"><%= promo.difficulty %></span>
+          </div>
+          <p class="text-gray-600 dark:text-gray-400 text-lg"><%= promo.tagline %></p>
+        </div>
+        <div class="text-center md:text-right">
+          <div class="text-5xl font-display font-bold text-finance-600 dark:text-finance-400"><%= promo.bonusAmount %>€</div>
+          <div class="text-sm text-gray-500"><%= promo.bonusType %></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
+    <div class="grid grid-cols-1 lg:grid-cols-3 gap-8">
+      <!-- Main content -->
+      <div class="lg:col-span-2 space-y-10">
+
+        <!-- Description -->
+        <div class="card p-6 md:p-8">
+          <h2 class="text-xl font-display font-bold text-gray-900 dark:text-white mb-4">Descrizione</h2>
+          <p class="text-gray-700 dark:text-gray-300 leading-relaxed"><%= promo.longDescription %></p>
+          <div class="grid grid-cols-2 md:grid-cols-4 gap-4 mt-6">
+            <div class="bg-gray-50 dark:bg-dark-800 rounded-xl p-3 text-center">
+              <div class="text-xs text-gray-500 mb-1">Bonus</div>
+              <div class="font-display font-bold text-finance-600"><%= promo.bonusAmount %>€</div>
+            </div>
+            <div class="bg-gray-50 dark:bg-dark-800 rounded-xl p-3 text-center">
+              <div class="text-xs text-gray-500 mb-1">Scadenza</div>
+              <div class="font-semibold text-sm"><%= new Date(promo.validTo).toLocaleDateString('it-IT') %></div>
+            </div>
+            <div class="bg-gray-50 dark:bg-dark-800 rounded-xl p-3 text-center">
+              <div class="text-xs text-gray-500 mb-1">Accredito</div>
+              <div class="font-semibold text-xs"><%= promo.timeToBonus %></div>
+            </div>
+            <div class="bg-gray-50 dark:bg-dark-800 rounded-xl p-3 text-center">
+              <div class="text-xs text-gray-500 mb-1">Difficoltà</div>
+              <div class="font-semibold text-sm"><%= promo.difficulty %></div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Step by step guide -->
+        <div class="card p-6 md:p-8">
+          <h2 class="text-xl font-display font-bold text-gray-900 dark:text-white mb-6">Guida Passo-Passo</h2>
+          <div class="space-y-6">
+            <% promo.steps.forEach(step => { %>
+            <div class="flex flex-col sm:flex-row gap-6 p-4 rounded-2xl hover:bg-gray-50 dark:hover:bg-dark-800 transition-colors">
+              <div class="flex-shrink-0">
+                <div class="step-number"><%= step.step %></div>
+              </div>
+              <div class="flex-1">
+                <h3 class="font-semibold text-gray-900 dark:text-white mb-2 text-lg"><%= step.title %></h3>
+                <p class="text-gray-600 dark:text-gray-400 mb-4 text-sm leading-relaxed"><%= step.description %></p>
+                <div class="relative rounded-xl overflow-hidden border border-gray-100 dark:border-gray-800 shadow-sm max-w-sm">
+                  <img src="/images/placeholders/step.png" alt="<%= step.title %>" class="w-full h-auto opacity-80 group-hover:opacity-100 transition-opacity">
+                  <div class="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent"></div>
+                </div>
+              </div>
+            </div>
+            <% }) %>
+          </div>
+        </div>
+
+        <!-- Pro / Cons -->
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+          <div class="card p-6">
+            <h3 class="font-display font-bold text-gray-900 dark:text-white mb-4 flex items-center gap-2">
+              <span class="w-8 h-8 bg-finance-100 dark:bg-finance-900 rounded-lg flex items-center justify-center text-finance-600">✓</span>
+              Pro
+            </h3>
+            <ul class="space-y-2">
+              <% promo.pros.forEach(p => { %>
+              <li class="flex items-start gap-2 text-sm text-gray-700 dark:text-gray-300">
+                <span class="text-finance-500 mt-0.5">+</span> <%= p %>
+              </li>
+              <% }) %>
+            </ul>
+          </div>
+          <div class="card p-6">
+            <h3 class="font-display font-bold text-gray-900 dark:text-white mb-4 flex items-center gap-2">
+              <span class="w-8 h-8 bg-red-100 dark:bg-red-900 rounded-lg flex items-center justify-center text-red-600">✕</span>
+              Contro
+            </h3>
+            <ul class="space-y-2">
+              <% promo.cons.forEach(c => { %>
+              <li class="flex items-start gap-2 text-sm text-gray-700 dark:text-gray-300">
+                <span class="text-red-500 mt-0.5">−</span> <%= c %>
+              </li>
+              <% }) %>
+            </ul>
+          </div>
+        </div>
+
+        <!-- FAQ -->
+        <div class="card p-6 md:p-8">
+          <h2 class="text-xl font-display font-bold text-gray-900 dark:text-white mb-6">Domande Frequenti</h2>
+          <div class="accordion-group">
+            <% promo.faqs.forEach((faq, i) => { %>
+            <div class="accordion-item">
+              <button class="accordion-trigger" aria-expanded="<%= i === 0 ? 'true' : 'false' %>">
+                <span><%= faq.question %></span>
+                <svg class="w-5 h-5 text-gray-400 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
+              </button>
+              <div class="accordion-content <%= i === 0 ? 'open' : '' %>">
+                <p><%= faq.answer %></p>
+              </div>
+            </div>
+            <% }) %>
+          </div>
+        </div>
+
+        <!-- Checklist -->
+        <div class="card p-6 md:p-8">
+          <h2 class="text-xl font-display font-bold text-gray-900 dark:text-white mb-2">Checklist</h2>
+          <p class="text-sm text-gray-500 mb-6">Spunta ogni passaggio completato. Il progresso viene salvato automaticamente.</p>
+          <div class="space-y-3">
+            <% promo.steps.forEach(step => { %>
+            <div class="checklist-item" data-check-id="<%= promo.id %>-step-<%= step.step %>">
+              <div class="checklist-check"></div>
+              <div>
+                <div class="font-medium text-sm text-gray-900 dark:text-white"><%= step.title %></div>
+                <div class="text-xs text-gray-500"><%= step.description.substring(0, 80) %>...</div>
+              </div>
+            </div>
+            <% }) %>
+          </div>
+        </div>
+      </div>
+
+      <!-- Sidebar -->
+      <div class="lg:col-span-1 space-y-6">
+        <!-- CTA Card (sticky) -->
+        <div class="lg:sticky lg:top-24 space-y-6">
+          <div class="card p-6 border-2" style="border-color: var(--promo-color-30)">
+            <div class="text-center mb-6">
+              <div class="text-4xl font-display font-bold text-finance-600 dark:text-finance-400 mb-1"><%= promo.bonusAmount %>€</div>
+              <div class="text-sm text-gray-500">di bonus per te</div>
+            </div>
+
+            <% if (promo.referralCode) { %>
+            <div class="mb-4">
+              <label class="text-xs font-medium text-gray-500 mb-2 block">Codice Referral:</label>
+              <button class="copy-btn w-full justify-center text-base py-3" data-copy="<%= promo.referralCode %>">
+                <span class="copy-code-text font-bold text-lg"><%= promo.referralCode %></span>
+                <span class="copy-label text-xs">Copia codice</span>
+              </button>
+            </div>
+            <% } %>
+
+            <a href="<%= promo.referralLink %>" target="_blank" rel="noopener" data-referral class="btn-cta w-full text-center mb-3">
+              <% if (promo.referralCode) { %>
+              Ottieni <%= promo.bonusAmount %>€ ora
+              <% } else { %>
+              Iscriviti e ottieni <%= promo.bonusAmount %>€
+              <% } %>
+            </a>
+            <p class="text-[10px] text-gray-400 text-center">Link referral. Verifica condizioni su <%= promo.bank %>.</p>
+          </div>
+
+          <!-- Calculator -->
+          <% if (promo.maxReferrals) { %>
+          <div class="card p-6">
+            <h3 class="font-display font-bold text-gray-900 dark:text-white mb-4">Calcolatore Guadagni</h3>
+            <p class="text-xs text-gray-500 mb-4">Quanto puoi guadagnare invitando amici?</p>
+            <input type="hidden" id="calc-bonus-amount" value="<%= promo.bonusAmount %>">
+            <div class="mb-4">
+              <label class="text-xs font-medium text-gray-600 dark:text-gray-400 mb-1 block">Numero amici:</label>
+              <input type="number" id="calc-friends" class="calc-input" min="0" max="<%= promo.maxReferrals %>" value="10">
+            </div>
+            <div class="bg-gray-50 dark:bg-dark-800 rounded-xl p-4 text-center">
+              <div class="text-xs text-gray-500 mb-1">Guadagno potenziale</div>
+              <div id="calc-result" class="calc-result">500€</div>
+            </div>
+            <p class="text-[10px] text-gray-400 mt-2 text-center">Max <%= promo.maxReferrals %> amici (<%= promo.maxEarnings?.toLocaleString('it-IT') %>€)</p>
+          </div>
+          <% } %>
+
+          <!-- Info box -->
+          <div class="card p-6 bg-brand-50 dark:bg-brand-950 border-brand-200 dark:border-brand-800">
+            <h3 class="font-semibold text-brand-800 dark:text-brand-200 mb-2 text-sm">ℹ️ Informazioni</h3>
+            <ul class="space-y-2 text-xs text-brand-700 dark:text-brand-300">
+              <li><strong>Banca:</strong> <%= promo.bank %></li>
+              <li><strong>Valida dal:</strong> <%= new Date(promo.validFrom).toLocaleDateString('it-IT') %></li>
+              <li><strong>Valida fino al:</strong> <%= new Date(promo.validTo).toLocaleDateString('it-IT') %></li>
+              <li><strong>Tempo accredito:</strong> <%= promo.timeToBonus %></li>
+              <% if (promo.maxReferrals) { %>
+              <li><strong>Max inviti:</strong> <%= promo.maxReferrals %> amici</li>
+              <% } %>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</main>
+
+<!-- Schema.org FAQ -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    <% promo.faqs.forEach((faq, i) => { %>
+    {
+      "@type": "Question",
+      "name": "<%= faq.question.replace(/"/g, '\\"') %>",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "<%= faq.answer.replace(/"/g, '\\"') %>"
+      }
+    }<%= i < promo.faqs.length - 1 ? ',' : '' %>
+    <% }) %>
+  ]
+}
+</script>
+
+<%- include('../partials/footer') %>

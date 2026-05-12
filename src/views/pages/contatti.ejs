@@ -1,0 +1,78 @@
+<%- include('../partials/head') %>
+<%- include('../partials/navbar') %>
+
+<main class="flex-1">
+  <section class="bg-gray-50 dark:bg-dark-800 py-12 md:py-16">
+    <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+      <h1 class="section-title text-3xl md:text-4xl">Contatti</h1>
+      <p class="section-subtitle">Hai domande, segnalazioni o proposte di collaborazione?</p>
+    </div>
+  </section>
+
+  <section class="py-12">
+    <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+        <div>
+          <div class="prose-custom">
+            <h2>Come contattarci</h2>
+            <p>Siamo sempre felici di ricevere feedback, segnalazioni di nuove promozioni o semplicemente un messaggio.</p>
+          </div>
+
+          <div class="space-y-4 mt-8">
+            <div class="card p-5 flex items-start gap-4">
+              <div class="w-10 h-10 bg-brand-100 dark:bg-brand-900 rounded-xl flex items-center justify-center flex-shrink-0">
+                <svg class="w-5 h-5 text-brand-600 dark:text-brand-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/></svg>
+              </div>
+              <div>
+                <h3 class="font-semibold text-gray-900 dark:text-white">Email</h3>
+                <a href="mailto:info@finwise.rocks" class="text-brand-600 dark:text-brand-400 hover:underline">info@finwise.rocks</a>
+              </div>
+            </div>
+
+            <div class="card p-5 flex items-start gap-4">
+              <div class="w-10 h-10 bg-finance-100 dark:bg-finance-900 rounded-xl flex items-center justify-center flex-shrink-0">
+                <svg class="w-5 h-5 text-finance-600 dark:text-finance-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
+              </div>
+              <div>
+                <h3 class="font-semibold text-gray-900 dark:text-white">Tempi di risposta</h3>
+                <p class="text-sm text-gray-600 dark:text-gray-400">Rispondiamo solitamente entro 24-48 ore lavorative.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div>
+          <div class="card p-6 md:p-8">
+            <h3 class="font-display font-bold text-gray-900 dark:text-white mb-6">Scrivici un messaggio</h3>
+            <form action="mailto:info@finwise.rocks" method="post" enctype="text/plain" class="space-y-4">
+              <div>
+                <label for="name" class="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-1">Nome</label>
+                <input type="text" id="name" name="name" required class="calc-input text-base" placeholder="Il tuo nome">
+              </div>
+              <div>
+                <label for="email" class="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-1">Email</label>
+                <input type="email" id="email" name="email" required class="calc-input text-base" placeholder="la@tua.email">
+              </div>
+              <div>
+                <label for="subject" class="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-1">Oggetto</label>
+                <select id="subject" name="subject" class="calc-input text-base">
+                  <option>Segnalazione promo</option>
+                  <option>Problema con un codice</option>
+                  <option>Proposta collaborazione</option>
+                  <option>Altro</option>
+                </select>
+              </div>
+              <div>
+                <label for="message" class="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-1">Messaggio</label>
+                <textarea id="message" name="message" rows="4" required class="calc-input text-base" placeholder="Il tuo messaggio..."></textarea>
+              </div>
+              <button type="submit" class="btn-primary w-full">Invia messaggio</button>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+</main>
+
+<%- include('../partials/footer') %>

@@ -1,0 +1,328 @@
+<%- include('partials/head') %>
+<%- include('partials/navbar') %>
+
+<style>
+  <% promos.forEach((promo, i) => { %>
+  .promo-row-<%= i %> { --promo-color: <%= promo.color %>; }
+  .promo-card-<%= i %> { 
+    --promo-color: <%= promo.color %>; 
+    --promo-color-88: <%= promo.color %>88; 
+    animation-delay: <%= i * 100 %>ms; 
+  }
+  <% }) %>
+</style>
+
+<main class="flex-1">
+
+  <!-- ═══ HERO ═══ -->
+  <section class="hero-gradient relative overflow-hidden py-20 md:py-28">
+    <div class="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+      <div class="animate-in">
+        <span class="badge-green text-sm px-4 py-1.5 mb-6 inline-block">🔥 Aggiornato Maggio 2026</span>
+        <h1 class="text-4xl md:text-5xl lg:text-6xl font-display font-extrabold text-white mb-6 text-balance leading-tight">
+          Guadagna con i migliori<br>
+          <span class="bg-gradient-to-r from-finance-400 to-brand-400 bg-clip-text text-transparent">bonus bancari 2026</span>
+        </h1>
+        <p class="text-lg md:text-xl text-gray-300 max-w-2xl mx-auto mb-10 text-balance">
+          Guide complete, codici referral verificati e calcolatori per massimizzare i tuoi guadagni. Fino a <strong class="text-white">180€ di bonus</strong> disponibili ora.
+        </p>
+        <div class="flex flex-col sm:flex-row items-center justify-center gap-4">
+          <a href="/bonus" class="btn-cta w-full sm:w-auto">
+            <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8c1.11 0 2.08.402 2.599 1M12 8V7m0 1v8m0 0v1m0-1c-1.11 0-2.08-.402-2.599-1M21 12a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
+            Scopri tutti i bonus
+          </a>
+          <a href="#comparison" class="btn-outline border-white/30 text-white hover:bg-white/10 w-full sm:w-auto">
+            Confronta le offerte ↓
+          </a>
+        </div>
+      </div>
+      <!-- Stats -->
+      <div class="grid grid-cols-2 md:grid-cols-4 gap-4 mt-16 animate-in delay-200">
+        <div class="bg-white/5 backdrop-blur rounded-xl p-4 border border-white/10">
+          <div class="text-2xl font-display font-bold text-white">180€+</div>
+          <div class="text-sm text-gray-400">Bonus totali</div>
+        </div>
+        <div class="bg-white/5 backdrop-blur rounded-xl p-4 border border-white/10">
+          <div class="text-2xl font-display font-bold text-white">4</div>
+          <div class="text-sm text-gray-400">Promo attive</div>
+        </div>
+        <div class="bg-white/5 backdrop-blur rounded-xl p-4 border border-white/10">
+          <div class="text-2xl font-display font-bold text-white">100%</div>
+          <div class="text-sm text-gray-400">Gratis</div>
+        </div>
+        <div class="bg-white/5 backdrop-blur rounded-xl p-4 border border-white/10">
+          <div class="text-2xl font-display font-bold text-white">5 min</div>
+          <div class="text-sm text-gray-400">Per iniziare</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══ COMPARISON TABLE ═══ -->
+  <section id="comparison" class="py-16 md:py-20 bg-gray-50 dark:bg-dark-800">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="text-center mb-12" data-animate>
+        <h2 class="section-title">Confronta i Bonus</h2>
+        <p class="section-subtitle mx-auto">Tutte le promozioni attive a colpo d'occhio. Scegli quella giusta per te.</p>
+      </div>
+      <div class="table-responsive" data-animate>
+        <table>
+          <thead>
+            <tr>
+              <th>Promozione</th>
+              <th>Bonus</th>
+              <th>Requisiti</th>
+              <th>Scadenza</th>
+              <th>Difficoltà</th>
+              <th></th>
+            </tr>
+          </thead>
+          <tbody>
+            <% promos.forEach((promo, i) => { %>
+            <tr>
+              <td>
+                <div class="flex items-center gap-3 promo-row-<%= i %>">
+                  <div class="w-10 h-10 rounded-xl flex items-center justify-center text-white font-bold text-sm" style="background: var(--promo-color)">
+                    <%= promo.shortName.charAt(0) %>
+                  </div>
+                  <div>
+                    <div class="font-semibold text-gray-900 dark:text-white"><%= promo.name %></div>
+                    <div class="text-xs text-gray-500"><%= promo.bank %></div>
+                  </div>
+                </div>
+              </td>
+              <td>
+                <span class="text-xl font-display font-bold text-finance-600 dark:text-finance-400"><%= promo.bonusAmount %>€</span>
+                <div class="text-xs text-gray-500"><%= promo.bonusType %></div>
+              </td>
+              <td class="max-w-[200px]">
+                <p class="text-xs leading-relaxed"><%= promo.requirements[0] %></p>
+              </td>
+              <td>
+                <span class="text-sm"><%= new Date(promo.validTo).toLocaleDateString('it-IT', {day:'2-digit',month:'short',year:'numeric'}) %></span>
+              </td>
+              <td>
+                <span class="badge-green"><%= promo.difficulty %></span>
+              </td>
+              <td>
+                <a href="/bonus/<%= promo.slug %>" class="btn-primary text-xs px-4 py-2">Scopri →</a>
+              </td>
+            </tr>
+            <% }) %>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══ PROMO CARDS ═══ -->
+  <section class="py-16 md:py-20">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="text-center mb-12" data-animate>
+        <h2 class="section-title">Le Migliori Promozioni</h2>
+        <p class="section-subtitle mx-auto">Guide dettagliate con codici referral verificati e istruzioni passo-passo.</p>
+      </div>
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+        <% promos.forEach((promo, i) => { %>
+        <div class="card-promo promo-card-<%= i %>" data-animate>
+          <div class="absolute top-0 left-0 right-0 h-1" style="background: linear-gradient(90deg, var(--promo-color), var(--promo-color-88))"></div>
+          <div class="flex items-center gap-3 mb-4">
+            <div class="w-12 h-12 rounded-xl flex items-center justify-center text-white font-bold" style="background: var(--promo-color)">
+              <%= promo.shortName.charAt(0) %>
+            </div>
+            <div>
+              <h3 class="font-display font-bold text-gray-900 dark:text-white"><%= promo.name %></h3>
+              <span class="badge-green text-[10px]"><%= promo.difficulty %></span>
+            </div>
+          </div>
+          <div class="text-3xl font-display font-bold text-finance-600 dark:text-finance-400 mb-2">
+            <%= promo.bonusAmount %>€
+          </div>
+          <p class="text-sm text-gray-600 dark:text-gray-400 mb-1"><%= promo.bonusType %></p>
+          <p class="text-sm text-gray-500 dark:text-gray-500 mb-4">Scade: <%= new Date(promo.validTo).toLocaleDateString('it-IT') %></p>
+          <% if (promo.referralCode) { %>
+          <div class="mb-4">
+            <button class="copy-btn w-full justify-center" data-copy="<%= promo.referralCode %>">
+              <span class="copy-code-text font-bold"><%= promo.referralCode %></span>
+              <span class="copy-label text-xs text-gray-500">Copia codice</span>
+            </button>
+          </div>
+          <% } %>
+          <a href="/bonus/<%= promo.slug %>" class="btn-primary w-full text-center text-sm">
+            Guida completa →
+          </a>
+        </div>
+        <% }) %>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══ WHY FINWISE + PROOF ═══ -->
+  <section class="py-16 md:py-20 bg-gray-50 dark:bg-dark-800">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="text-center mb-12" data-animate>
+        <h2 class="section-title">Perché Finwise.rocks?</h2>
+        <p class="section-subtitle mx-auto">Non siamo una referral farm. Siamo appassionati di finanza personale che vogliono aiutarti a risparmiare.</p>
+      </div>
+
+      <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center mb-16">
+        <div class="order-2 lg:order-1" data-animate>
+          <div class="grid grid-cols-1 sm:grid-cols-2 gap-6">
+            <div class="card p-6">
+              <div class="w-12 h-12 bg-brand-100 dark:bg-brand-900 rounded-xl flex items-center justify-center mb-4">
+                <svg class="w-6 h-6 text-brand-600 dark:text-brand-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
+              </div>
+              <h3 class="font-display font-bold text-gray-900 dark:text-white mb-2">Verificato</h3>
+              <p class="text-sm text-gray-600 dark:text-gray-400">Ogni bonus è testato personalmente. Pubblichiamo solo promozioni verificate e attive.</p>
+            </div>
+            <div class="card p-6">
+              <div class="w-12 h-12 bg-finance-100 dark:bg-finance-900 rounded-xl flex items-center justify-center mb-4">
+                <svg class="w-6 h-6 text-finance-600 dark:text-finance-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253"/></svg>
+              </div>
+              <h3 class="font-display font-bold text-gray-900 dark:text-white mb-2">Guide reali</h3>
+              <p class="text-sm text-gray-600 dark:text-gray-400">Istruzioni passo-passo con FAQ, checklist e calcolatori per non perdere nessun bonus.</p>
+            </div>
+            <div class="card p-6">
+              <div class="w-12 h-12 bg-amber-100 dark:bg-amber-900 rounded-xl flex items-center justify-center mb-4">
+                <svg class="w-6 h-6 text-amber-600 dark:text-amber-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z"/></svg>
+              </div>
+              <h3 class="font-display font-bold text-gray-900 dark:text-white mb-2">Aggiornato</h3>
+              <p class="text-sm text-gray-600 dark:text-gray-400">Monitoriamo quotidianamente le promozioni. Scadenze e condizioni sempre aggiornate.</p>
+            </div>
+            <div class="card p-6">
+              <div class="w-12 h-12 bg-purple-100 dark:bg-purple-900 rounded-xl flex items-center justify-center mb-4">
+                <svg class="w-6 h-6 text-purple-600 dark:text-purple-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z"/></svg>
+              </div>
+              <h3 class="font-display font-bold text-gray-900 dark:text-white mb-2">Community</h3>
+              <p class="text-sm text-gray-600 dark:text-gray-400">Unisciti a migliaia di utenti che usano i nostri codici ogni mese con successo.</p>
+            </div>
+          </div>
+        </div>
+        <div class="order-1 lg:order-2" data-animate>
+          <div class="relative group">
+            <div class="absolute -inset-1 bg-gradient-to-r from-finance-600 to-brand-600 rounded-2xl blur opacity-25 group-hover:opacity-50 transition duration-1000 group-hover:duration-200"></div>
+            <div class="relative bg-white dark:bg-dark-900 rounded-2xl p-4 shadow-2xl overflow-hidden border border-gray-100 dark:border-gray-800">
+              <div class="flex items-center justify-between mb-4 px-2">
+                <div class="text-xs font-bold text-gray-400 uppercase tracking-widest">Proof: Bonus Ricevuto</div>
+                <div class="flex gap-1">
+                  <div class="w-2 h-2 rounded-full bg-red-400"></div>
+                  <div class="w-2 h-2 rounded-full bg-amber-400"></div>
+                  <div class="w-2 h-2 rounded-full bg-green-400"></div>
+                </div>
+              </div>
+              <img src="/images/bonus-proof.png" alt="Screenshot prova bonus ricevuto" class="rounded-xl w-full h-auto shadow-sm">
+              <div class="mt-4 p-3 bg-finance-50 dark:bg-finance-900/30 rounded-xl border border-finance-100 dark:border-finance-800/50">
+                <p class="text-xs text-finance-700 dark:text-finance-300 text-center font-medium">
+                  Ecco un esempio di bonus di <span class="font-bold">50€</span> ricevuto correttamente sul conto Buddy UniCredit.
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══ QUICK CALCULATOR ═══ -->
+  <section class="py-16 md:py-20">
+    <div class="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="card p-8 md:p-12 text-center" data-animate>
+        <h2 class="section-title text-2xl md:text-3xl">Quanto puoi guadagnare?</h2>
+        <p class="section-subtitle mx-auto mb-8">Calcola il tuo potenziale guadagno invitando amici con Buddy UniCredit</p>
+        <input type="hidden" id="calc-bonus-amount" value="50">
+        <div class="flex items-center justify-center gap-4 mb-6">
+          <label for="calc-friends" class="text-sm font-medium text-gray-700 dark:text-gray-300">Amici invitati:</label>
+          <input type="number" id="calc-friends" class="calc-input w-24 text-center" min="0" max="100" value="5">
+        </div>
+        <div class="mb-2 text-sm text-gray-500">Guadagno potenziale:</div>
+        <div id="calc-result" class="calc-result">250€</div>
+        <p class="text-xs text-gray-500 mt-4">Buddy UniCredit: 50€ per ogni amico, fino a 100 amici (max 5.000€)</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══ LATEST BLOG ═══ -->
+  <% if (blogPosts && blogPosts.length) { %>
+  <section class="py-16 md:py-20 bg-gray-50 dark:bg-dark-800">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="flex items-center justify-between mb-12" data-animate>
+        <div>
+          <h2 class="section-title text-2xl md:text-3xl">Dal Blog</h2>
+          <p class="text-gray-600 dark:text-gray-400">Guide e confronti per risparmiare di più</p>
+        </div>
+        <a href="/blog" class="btn-outline hidden sm:inline-flex">Tutti gli articoli →</a>
+      </div>
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-6" data-animate>
+        <% blogPosts.forEach(post => { %>
+        <a href="/blog/<%= post.slug %>" class="blog-card">
+          <div class="h-40 bg-gradient-to-br from-brand-500 to-finance-500 flex items-center justify-center p-6">
+            <span class="text-white font-display font-bold text-lg text-center leading-tight"><%= post.title.split('–')[0] %></span>
+          </div>
+          <div class="p-5">
+            <span class="badge-blue mb-2"><%= post.category %></span>
+            <h3 class="font-display font-bold text-gray-900 dark:text-white mb-2 text-sm"><%= post.title %></h3>
+            <p class="text-xs text-gray-500 line-clamp-2"><%= post.excerpt %></p>
+            <div class="flex items-center gap-2 mt-3 text-xs text-gray-400">
+              <span><%= new Date(post.date).toLocaleDateString('it-IT') %></span>
+              <span>·</span>
+              <span><%= post.readTime %> min lettura</span>
+            </div>
+          </div>
+        </a>
+        <% }) %>
+      </div>
+      <div class="text-center mt-8 sm:hidden">
+        <a href="/blog" class="btn-outline">Tutti gli articoli →</a>
+      </div>
+    </div>
+  </section>
+  <% } %>
+
+  <!-- ═══ CTA FINALE ═══ -->
+  <section class="py-16 md:py-20">
+    <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center" data-animate>
+      <h2 class="section-title text-3xl md:text-4xl mb-4">Pronto a guadagnare?</h2>
+      <p class="section-subtitle mx-auto mb-8">Non perdere le promozioni attive. Ogni giorno che aspetti è un giorno più vicino alla scadenza.</p>
+      <a href="/bonus" class="btn-cta text-lg px-10 py-5">
+        🚀 Inizia ora — È gratis
+      </a>
+    </div>
+  </section>
+
+</main>
+
+<!-- Schema.org FAQ -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "Quanto posso guadagnare con i bonus bancari nel 2026?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Sommando le promozioni attive (Buddy UniCredit 50€, isybank 30€, Revolut ~50€, Trade Republic ~50€) puoi guadagnare fino a 180€. Invitando amici il potenziale sale esponenzialmente."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "I bonus bancari sono gratuiti?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Sì, tutti i bonus elencati su Finwise.rocks sono completamente gratuiti. Non devi pagare nulla per ottenerli, basta completare i semplici requisiti di ogni promozione."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Cosa sono i codici referral?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "I codici referral (o codici invito) sono codici univoci che, inseriti durante la registrazione a un servizio bancario, attivano un bonus sia per te che per chi ti ha invitato."
+      }
+    }
+  ]
+}
+</script>
+
+<%- include('partials/footer') %>
