@@ -1,7 +1,7 @@
 <%- include('partials/head') %>
 <%- include('partials/navbar') %>
 
-<style>
+<%- '<style>' %>
   <% promos.forEach((promo, i) => { %>
   .promo-row-<%= i %> { --promo-color: <%= promo.color %>; }
   .promo-card-<%= i %> { 
@@ -10,7 +10,7 @@
     animation-delay: <%= i * 100 %>ms; 
   }
   <% }) %>
-</style>
+<%- '</style>' %>
 
 <main class="flex-1">
 

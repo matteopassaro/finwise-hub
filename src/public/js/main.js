@@ -153,52 +153,47 @@ function initCalculators() {
   update();
 }
 
-// ── Table filter/sort ──
-function initTableFilters() {
-  const table = document.getElementById('bonus-table');
-  if (!table) return;
-
-  // Sort
-  document.querySelectorAll('[data-sort]').forEach(header => {
-    header.style.cursor = 'pointer';
-    header.addEventListener('click', () => {
-      const col = header.getAttribute('data-sort');
-      const tbody = table.querySelector('tbody');
-      const rows = Array.from(tbody.querySelectorAll('tr'));
-      const dir = header.getAttribute('data-dir') === 'asc' ? 'desc' : 'asc';
-      header.setAttribute('data-dir', dir);
-
-      rows.sort((a, b) => {
-        let va = a.querySelector(`[data-col="${col}"]`)?.textContent.trim() || '';
-        let vb = b.querySelector(`[data-col="${col}"]`)?.textContent.trim() || '';
-        // Try numeric
-        const na = parseFloat(va.replace(/[^0-9.-]/g, ''));
-        const nb = parseFloat(vb.replace(/[^0-9.-]/g, ''));
-        if (!isNaN(na) && !isNaN(nb)) {
-          return dir === 'asc' ? na - nb : nb - na;
-        }
-        return dir === 'asc' ? va.localeCompare(vb) : vb.localeCompare(va);
-      });
-      rows.forEach(r => tbody.appendChild(r));
-    });
-  });
+// ── Grid filter/sort ──
+function initGridFilters() {
+  const grid = document.getElementById('bonus-grid');
+  const noResults = document.getElementById('no-results');
+  if (!grid) return;
 
   // Filter
   const filterBtns = document.querySelectorAll('[data-filter]');
   filterBtns.forEach(btn => {
     btn.addEventListener('click', () => {
-      filterBtns.forEach(b => b.classList.remove('active', 'bg-brand-100', 'dark:bg-brand-900', 'text-brand-700'));
+      // Remove active class from all
+      filterBtns.forEach(b => {
+        b.classList.remove('active', 'bg-brand-100', 'dark:bg-brand-900', 'text-brand-700');
+        b.classList.add('bg-gray-100', 'dark:bg-gray-800', 'text-gray-600', 'dark:text-gray-400');
+      });
+      // Add active to clicked
+      btn.classList.remove('bg-gray-100', 'dark:bg-gray-800', 'text-gray-600', 'dark:text-gray-400');
       btn.classList.add('active', 'bg-brand-100', 'dark:bg-brand-900', 'text-brand-700');
+      
       const filter = btn.getAttribute('data-filter');
-      const tbody = table.querySelector('tbody');
-      tbody.querySelectorAll('tr').forEach(row => {
+      const cards = grid.querySelectorAll('.card-promo');
+      let visibleCount = 0;
+
+      cards.forEach(card => {
         if (filter === 'all') {
-          row.style.display = '';
+          card.style.display = '';
+          visibleCount++;
         } else {
-          const diff = row.getAttribute('data-difficulty') || '';
-          row.style.display = diff === filter ? '' : 'none';
+          const diff = card.getAttribute('data-difficulty') || '';
+          if (diff === filter) {
+            card.style.display = '';
+            visibleCount++;
+          } else {
+            card.style.display = 'none';
+          }
         }
       });
+
+      if (noResults) {
+        noResults.classList.toggle('hidden', visibleCount > 0);
+      }
     });
   });
 }
@@ -234,7 +229,7 @@ document.addEventListener('DOMContentLoaded', () => {
   initAccordions();
   initChecklists();
   initCalculators();
-  initTableFilters();
+  initGridFilters();
   initScrollAnimations();
   addUTMToLinks();
 });
